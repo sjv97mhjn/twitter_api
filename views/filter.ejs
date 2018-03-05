@@ -1,0 +1,58 @@
+<%include partials/header%>
+<div class="container">
+  <div class="jumbotron">
+  <form class="" action="/filter/0" method="get">
+    <div class="form-group">
+      <label >Query Text Search</label>
+      <input class="form-control" type="text" name="text" value="">
+    </div>
+    <div class="form-group">
+      <label >Select Type of Search</label>
+      <input class="form-control" type="radio" name="tweet_type" value="contain" checked>Contains
+      <input class="form-control" type="radio" name="tweet_type" value="start">Starts With
+      <input class="form-control" type="radio" name="tweet_type" value="end">Ends with
+      <input class="form-control" type="radio" name="tweet_type" value="exact">Exact
+
+    </div>
+    <div class="form-group">
+      <label >Query Screen Name Search</label>
+      <input class="form-control" type="text" name="screen_name" value="">
+      <label >Select Type of Search</label>
+      <input class="form-control" type="radio" name="screen_name_type" value="contain" checked>Contains
+      <input class="form-control" type="radio" name="screen_name_type" value="start">Starts With
+      <input class="form-control" type="radio" name="screen_name_type" value="end">Ends with
+      <input class="form-control" type="radio" name="screen_name_type" value="exact">Exact
+
+    </div>
+    <div class="form-group">
+      <label >Start Date</label>
+      <input class="form-control" type="date" name="start" value="">
+      <label >End Date</label>
+      <input class="form-control" type="date" name="end" value="">
+
+    </div>
+    <div class="form-group">
+      <label >Retweet Min</label>
+      <input class="form-control" type="number" name="retweetMin" value="">
+      <label >Retweet Max</label>
+      <input class="form-control" type="number" name="retweetMax" value="">
+
+    </div>
+    <div class="form-group">
+      <label >favorite Min</label>
+      <input class="form-control" type="number" name="favoriteMin" value="">
+      <label >favorite Max</label>
+      <input class="form-control" type="number" name="favoriteMax" value="">
+
+    </div>
+    <div class="form-group">
+      <label >Sort By</label>
+      <input class="form-control" type="radio" name="sort" value="created_at" checked>Date
+      <input class="form-control" type="radio" name="sort" value="retweet_count">Retweet Count
+      <input class="form-control" type="radio" name="sort" value="followers_count">followers Count
+
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>

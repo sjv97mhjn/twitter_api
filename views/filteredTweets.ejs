@@ -1,0 +1,84 @@
+<%include partials/header%>
+<script type="text/javascript">
+  var i =4;
+</script>
+<div class="container">
+<%data.forEach(function(item){ %>
+  <div class="jumbotron">
+  <h3>Screen Name : <%=item.screen_name%></h3>
+  <h3>Name : <%=item.name%></h3>
+  <h3>Tweet Text : <%=item.text%></h3>
+  <h3>Retweet Count : <%=item.retweet_count%></h3>
+  <h3>Followers Count : <%=item.followers_count%></h3>
+  <h3>Favorite Count : <%=item.favorite_count%></h3>
+  <h3>Language : <%=item.language%></h3>
+  <h3>Uers Mentions : <%=item.user_mentions%></h3>
+  <h3>Urls : <%=item.urls%></h3>
+</div>
+<% })%>
+</div>
+<div class="container">
+
+<% page = Number(page)-1 ;%>
+<a href="/filter/<%=page%>"><button class="btn btn-primary"> <-- Previous Page</button></a>
+<% page = Number(page)+2 ;%>
+<a href="/filter/<%=page%>"><button class="btn btn-primary">Next Page --> </button></a>
+</div>
+<div class="container">
+  <h4>Download Data in CSV Format</h4>
+  <a href="/downloadcsv"> <button  type="button" name="button" class="btn btn-primary btn-lg">Download CSV</button></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+var download = function(content, fileName, mimeType) {
+  var a = document.createElement('a');
+  mimeType = mimeType || 'application/octet-stream';
+
+  if (navigator.msSaveBlob) { // IE10
+    navigator.msSaveBlob(new Blob([content], {
+      type: mimeType
+    }), fileName);
+  } else if (URL && 'download' in a) { //html5 A[download]
+    a.href = URL.createObjectURL(new Blob([content], {
+      type: mimeType
+    }));
+    a.setAttribute('download', fileName);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  } else {
+    location.href = 'data:application/octet-stream,' + encodeURIComponent(content); // only this mime type is supported
+  }
+}
+</script>
+
+<script>
+    $(document).ready(function() {
+
+      $("#csv").click(function(){
+        var content = `<%=Data%>`;
+        console.log(content);
+        download(content, 'dowload.csv', 'text/csv;encoding:utf-8');
+        });
+    });
+
+
+</script>

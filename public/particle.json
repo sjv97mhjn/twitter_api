@@ -1,0 +1,41 @@
+{
+	"particles":{
+		"number":{
+			"value":50
+				},
+
+		"color":{
+			"value":"#fff"
+				},
+
+		"shape":{
+			"type":"circle",
+			"stroke":{
+						"width":2,
+						"color":" #14e79d"
+					}
+
+				},
+
+		"opacity":{
+				"value":0.9
+				
+				   },
+			"size":{
+				"value":5
+					},
+			"move":{
+				"out_mode":"bounce",
+				"speed":3
+					},
+				"straight":true,
+				"bounce":true	
+	},
+	"interactivity":{
+		"events" :{
+			"onhover":{
+				"enable":true
+			}	
+		}	
+	}
+}
