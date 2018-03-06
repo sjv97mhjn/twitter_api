@@ -37,9 +37,22 @@ t.on("error", function(err) {
 });
 
 module.exports = {
+
+  /**
+   * keyword - Renders Get Keyword Ejs
+   *
+   * @param  {type} req Request Object
+   * @param  {type} res Response Object
+   */
   keyword:function(req,res){
     res.render("keyword.ejs");
   },
+
+  /**
+   * fetch - Based Upon Keyword Obtained Twitter Streaming is activated for 20 seconds.
+   * @param  {type} req Request Object
+   * @param  {type} res Response Object 
+   */
   fetch: function(req, res) {
     console.log(req.query.keyword);
     TweetArray = [];

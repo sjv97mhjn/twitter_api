@@ -7,13 +7,18 @@
   <div class="jumbotron">
   <h3>Screen Name : <%=item.screen_name%></h3>
   <h3>Name : <%=item.name%></h3>
+  <h3>Date : <%=item.created_at%></h3>
   <h3>Tweet Text : <%=item.text%></h3>
   <h3>Retweet Count : <%=item.retweet_count%></h3>
   <h3>Followers Count : <%=item.followers_count%></h3>
   <h3>Favorite Count : <%=item.favorite_count%></h3>
   <h3>Language : <%=item.language%></h3>
-  <h3>Uers Mentions : <%=item.user_mentions%></h3>
-  <h3>Urls : <%=item.urls%></h3>
+  <%item.user_mentions.forEach(function(mention){ %>
+    <h3>Uers Mentions : <%=mention.name%></h3>
+  <% })%>
+  <%item.urls.forEach(function(url){ %>
+    <h3>Uers Mentions : <%=url.url%></h3>
+  <% })%>
 </div>
 <% })%>
 </div>
