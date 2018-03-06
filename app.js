@@ -13,5 +13,5 @@ mongoose.connection.openUri(config.MONGO_DB_URI);
 app.use("/", routes);
 
 app.listen(process.env.PORT || 5000, function(req, res) {
-  console.log("Listening on port 80");
+  console.log("Listening on port 5000");
 });
