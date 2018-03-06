@@ -14,7 +14,7 @@ var Tweet_Text = {};
 var Limit = 5;
 var Skip = 0;
 var page = 0;
-var language = 'en';
+var language =new RegExp();
 
 module.exports = {
   /**
@@ -130,7 +130,7 @@ var initialize = function() {
   Limit = 5;
   Skip = 0;
   page = 0;
-  language= 'en';
+  language= new RegExp();
 };
 
 /**
