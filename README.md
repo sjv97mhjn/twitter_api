@@ -1,7 +1,5 @@
 
-# Innovaccer Internship Assignment
-
-## Twitter_Api
+# Twitter_Api
 [3 API's]
 1. To stream Tweets based on a keyword 
     http://localhost:5000/fetch?keyword=[value]
